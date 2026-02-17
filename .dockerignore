@@ -1,0 +1,11 @@
+.git
+.github
+.gitignore
+README.md
+.DS_Store
+com.booky/.mvn
+com.booky/mvnw*
+com.booky/src
+com.booky/target/*
+!com.booky/target/*.jar
+.idea
