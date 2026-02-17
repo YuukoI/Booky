@@ -41,6 +41,7 @@ jobs:
         cache: maven
 
     - name: Run tests
+      working-directory: ./com.booky
       run: mvn -B clean test
       env:
         SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/booky_db
@@ -52,14 +53,14 @@ jobs:
       uses: codecov/codecov-action@v4
       if: success() || failure()
       with:
-        file: target/site/jacoco/jacoco.xml
+        file: com.booky/target/site/jacoco/jacoco.xml
 
     - name: Generate test report
       uses: dorny/test-reporter@v1
       if: success() || failure()
       with:
         name: Maven Tests
-        path: target/surefire-reports/*.xml
+        path: com.booky/target/surefire-reports/*.xml
         reporter: java-junit
 
   build:
@@ -79,6 +80,7 @@ jobs:
         cache: maven
 
     - name: Build application
+      working-directory: ./com.booky
       run: mvn -B clean package -DskipTests
 
     - name: Log in to Container Registry
