@@ -55,14 +55,6 @@ jobs:
       with:
         file: com.booky/target/site/jacoco/jacoco.xml
 
-    - name: Generate test report
-      uses: dorny/test-reporter@v1
-      if: success() || failure()
-      with:
-        name: Maven Tests
-        path: com.booky/target/surefire-reports/*.xml
-        reporter: java-junit
-
   build:
     needs: test
     runs-on: ubuntu-latest
