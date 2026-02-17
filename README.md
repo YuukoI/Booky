@@ -101,23 +101,3 @@ El proyecto incluye un pipeline completo de CI/CD con GitHub Actions que:
 1. **Tests**: Ejecuta suites de tests automatizados
 2. **Build**: Construye la aplicación y genera imagen Docker
 3. **Deploy**: Despliega a producción (requiere aprobación manual)
-
-## 📊 Estructura del Proyecto
-
-Booky/
-├── com.booky/                 # Aplicación Spring Boot
-│   ├── src/
-│   │   ├── main/java/
-│   │   │   └── com/booky/
-│   │   │       ├── controller/    # Controladores REST
-│   │   │       ├── service/       # Lógica de negocio
-│   │   │       ├── repository/    # Acceso a datos
-│   │   │       ├── entity/        # Entidades JPA
-│   │   │       ├── dto/           # Objetos de transferencia
-│   │   │       └── mapper/        # Mappers entre DTOs y entidades
-│   │   └── test/java/             # Tests
-│   └── pom.xml                    # Configuración Maven
-├── compose.yaml                   # Docker Compose para PostgreSQL
-├── Dockerfile                    # Imagen Docker de la aplicación
-├── .github/workflows/            # GitHub Actions CI/CD
-└── README-DEVOPS.md             # Documentación DevOps detallada
